@@ -1,0 +1,24 @@
+.search-bar {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.276);
+  align-items: stretch;
+  border-radius: 50px;
+  background-color: #fff;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.search-bar__input {
+  border:none;
+  width:300px;
+  font-size: 15px;
+}
+
+.search-bar__input:focus {
+  outline: none;
+}
+
+.search-bar__icon {
+  margin: 10px;
+  color:rgba(0, 0, 0, 0.564);
+}

@@ -1,0 +1,23 @@
+.create-task-button {
+  cursor: pointer;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #3662E3;
+}
+
+.create-task-button__icon {
+  font-size: 40px;
+  color: #FFFFFF;
+}
+
+.create-task-button:hover {
+  animation-name: rotation;
+  animation-duration: 2s;
+}
+
+@keyframes rotation {
+  100% {transform: rotate(180deg);}
+}

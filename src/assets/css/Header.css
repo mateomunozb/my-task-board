@@ -4,18 +4,18 @@
   gap: 8px;
 }
 
-.header h1 {
+.header__title {
   margin: 0;
   font-size: 40px;
   font-weight: 400;
 }
 
-.header i {
+.header__icon {
   font-size: 55px;
   color: #E9A23B;
 }
 
-.header p {
+.header__description {
   margin: 0;
   font-weight: 400;
   font-size: 16px;
