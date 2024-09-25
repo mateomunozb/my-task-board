@@ -16,15 +16,15 @@ function TaskItem({ text, status, description, emoji}) {
 
         {status === 'completed' ? (
             <span className='task-item__status-icon'>
-              <i class="fa-solid fa-square-check"></i>
+              <i className="fa-solid fa-square-check"></i>
             </span> 
           ) : status === 'inProgress' ? (
             <span className='task-item__status-icon'>
-              <i class="fa-solid fa-circle-half-stroke"></i>
+              <i className="fa-solid fa-circle-half-stroke"></i>
             </span>
           ) : status === 'wontDo' ? (
             <span className='task-item__status-icon'>
-              <i class="fa-solid fa-circle-xmark"></i>
+              <i className="fa-solid fa-circle-xmark"></i>
             </span>
           ) : null 
         }

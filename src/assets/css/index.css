@@ -5,6 +5,8 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,191,233,1) 100%);
 }
 
 #root {
@@ -12,7 +14,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  padding: 32px;
+  height: auto;
+  padding: 20px;
   gap: 24px;
 }
