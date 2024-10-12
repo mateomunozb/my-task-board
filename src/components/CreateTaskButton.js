@@ -1,4 +1,5 @@
 import '../assets/css/create-task-button.css'
+import { TaskIcon } from './TaskIcon';
 
 function CreateTaskButton() {
   return (
@@ -12,7 +13,7 @@ function CreateTaskButton() {
         }
       }
     >
-      <i className="create-task-button__icon  fa-solid fa-plus"></i>
+      <TaskIcon type="add"/>
     </button>
   );
 }

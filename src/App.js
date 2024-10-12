@@ -6,16 +6,17 @@ import { TaskItem } from './components/TaskItem';
 import { CreateTaskButton } from './components/CreateTaskButton';
 
 const defaultTodos = [
-  { text: 'Cortar cebolla', status: 'completed', description: 'Enter a short description', emoji: '⏰' },
-  { text: 'Tomar el curso de introduccion a React.js', status: 'inProgress', emoji: '🏋️‍♀️' },
-  { text: 'Llorar con la llorona', status: 'completed', description: 'Enter a short description', emoji: '☕' },
-  { text: 'LAALALAALALA', status: '', emoji: '📚' },
-  { text: 'LAALALAALALA', status: '', emoji: '📚' },
+  { text: 'Cortar cebolla', status: 'completed', description: 'Enter a short description', icon: 'clean' },
+  { text: 'Tomar el curso de introduccion a React.js', description: 'Enter a short', status: 'inProgress', icon: 'sport' },
+  { text: 'Llorar con la llorona', status: 'completed', description: 'Enter a short description', icon: 'study' },
+  { text: 'LAALALAALALA', description: 'Enter a short', status: '', icon: 'word' },
+  { text: 'LAALALAALALA', description: 'Enter a short', status: '', icon: 'fun' },
 ];
 
 function App() {
   const [tasks, setTasks] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
+  const [showOptions, setShowOptions] = React.useState(null);
 
   const completedTasks = tasks.filter(task => task.status === 'completed').length;
   const totalTasks = tasks.length;
@@ -25,6 +26,18 @@ function App() {
     const searchText = searchValue.toLowerCase();
     return taskText.includes(searchText);
   });
+
+  const changeTodoStatus = (todoIndex, status) => {
+    const newTodos = [...tasks];
+    newTodos[todoIndex].status = status;
+    setTasks(newTodos);
+  };
+
+  const deleteTodo = (todoIndex, status) => {
+    const newTodos = [...tasks];
+    newTodos.splice(todoIndex, 1);
+    setTasks(newTodos);
+  };
 
   return (
     <>
@@ -36,12 +49,18 @@ function App() {
 
       <TaskList>
         {searchedTasks.map((todo, i) => (
-          <TaskItem 
+          <TaskItem
+            setShowOptions={setShowOptions}
+            showOptions={showOptions}
+            index={i} 
             key={i} 
-            emoji={todo.emoji} 
+            icon={todo.icon} 
             text={todo.text} 
             status={todo.status} 
             description={todo.description}
+            onComplete={() => changeTodoStatus(i, 'completed')}
+            inProgress={() => changeTodoStatus(i, 'inProgress')}
+            onDelete={() => deleteTodo(i)}
           />
         ))}
       </TaskList>

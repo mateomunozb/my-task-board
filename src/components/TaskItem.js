@@ -1,35 +1,35 @@
 import '../assets/css/task-item.css'
+import { TaskIcon } from './TaskIcon';
 
-function TaskItem({ text, status, description, emoji}) {
+const iconByStatus = {
+  'completed': <TaskIcon type="done" color="green" size="25"/>,
+  'inProgress':  <TaskIcon type="progress"/>,
+};
+
+function TaskItem(props) {
   return (
-    <li className={
-      `task-item ${status === 'completed' ? "task-item--completed" : 
-      status === 'inProgress' ? "task-item--in-progress" : 
-      status === 'wontDo' ? "task-item--wont-do" : "task-item--unstarted"} `
-    }>
-      <span className='task-item__emoji'>{emoji}</span>
+    <li
+      onMouseEnter={() => props.setShowOptions(props.index)}
+      onMouseLeave={() => props.setShowOptions(null)}
+      className={
+        `task-item ${props.status === 'completed' ? "task-item--completed" : 
+        props.status === 'inProgress' ? "task-item--in-progress" : "task-item--unstarted"} `
+      }
+    >
+      <span className='task-item__icon'><TaskIcon type={props.icon}/></span>
       <div className='task-item__info'>
-        <p className='task-item__text'>{text}</p>
-        <span className='task-item__description'>{description}</span>
+        <p className='task-item__text'>{props.text}</p>
+        <span className='task-item__description'>{props.description}</span>
       </div>
-      <div>
-
-        {status === 'completed' ? (
-            <span className='task-item__status-icon'>
-              <i className="fa-solid fa-square-check"></i>
-            </span> 
-          ) : status === 'inProgress' ? (
-            <span className='task-item__status-icon'>
-              <i className="fa-solid fa-circle-half-stroke"></i>
-            </span>
-          ) : status === 'wontDo' ? (
-            <span className='task-item__status-icon'>
-              <i className="fa-solid fa-circle-xmark"></i>
-            </span>
-          ) : null 
-        }
-      </div>
-      
+        {props.showOptions === props.index ? 
+          <div className="task-item__options">
+            <span onClick={props.inProgress}>H</span>
+            <span onClick={props.onComplete}>V</span>
+            <span onClick={props.onDelete}>X</span>
+          </div>
+          : null
+        } 
+        {iconByStatus[props.status]}
     </li>
   );
 }

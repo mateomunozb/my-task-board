@@ -1,10 +1,11 @@
 import React from 'react';
 import '../assets/css/search-bar.css'
+import { TaskIcon } from './TaskIcon';
 
 function SearchBar({ searchValue, setSearchValue }) {
   return (
     <div className="search-bar">
-      <i className="search-bar__icon fa-solid fa-magnifying-glass"></i>
+      <TaskIcon type="search"/>
       <input 
         className="search-bar__input" 
         type="text" 

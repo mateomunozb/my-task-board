@@ -4,5 +4,9 @@
   width: 500px;
   gap: 12px;
   margin: 0;
-  padding: 0;
+  padding: 16px;
+  border: 3px solid rgb(228, 183, 241);
+  height: 330px;
+  overflow: auto;
+  border-radius: 15px;
 }

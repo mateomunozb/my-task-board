@@ -17,8 +17,3 @@
 .search-bar__input:focus {
   outline: none;
 }
-
-.search-bar__icon {
-  margin: 10px;
-  color:rgba(0, 0, 0, 0.564);
-}

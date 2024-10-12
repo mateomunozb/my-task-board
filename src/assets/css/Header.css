@@ -1,18 +1,18 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex-direction: column;
+}
+
+.header__principal {
+  display: flex;
+  gap: 8px
 }
 
 .header__title {
   margin: 0;
   font-size: 40px;
   font-weight: 400;
-}
-
-.header__icon {
-  font-size: 55px;
-  color: #E9A23B;
 }
 
 .header__description {
