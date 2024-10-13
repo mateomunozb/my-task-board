@@ -1,5 +1,5 @@
-import '../assets/css/task-item.css'
-import { TaskIcon } from './TaskIcon';
+import './task-item.css'
+import { TaskIcon } from '../TaskIcon';
 
 const iconByStatus = {
   'completed': <TaskIcon type="done" color="green" size="25"/>,

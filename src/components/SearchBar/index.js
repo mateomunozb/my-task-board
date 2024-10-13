@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/css/search-bar.css'
-import { TaskIcon } from './TaskIcon';
+import './search-bar.css'
+import { TaskIcon } from '../TaskIcon';
 
 function SearchBar({ searchValue, setSearchValue }) {
   return (

@@ -1,5 +1,5 @@
-import '../assets/css/header.css';
-import { TaskIcon } from './TaskIcon';
+import './header.css';
+import { TaskIcon } from '../TaskIcon';
 
 function Header({total, completed}) {
   return (
@@ -12,11 +12,11 @@ function Header({total, completed}) {
         {completed === total ?
           <span>All your tasks have been completed. <strong>Congratulations!</strong></span>
           :
-          <div>
+          <span>
             <span className='header__number'></span> 
             {completed} task completed of {total}
             <span className='header__number'></span>
-          </div>
+          </span>
         }
       </p>
     </div>

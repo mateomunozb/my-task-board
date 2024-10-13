@@ -1,4 +1,4 @@
-import '../assets/css/task-list.css'
+import './task-list.css'
 
 function TaskList({ children }) {
   return (

@@ -1,6 +1,6 @@
-import '../assets/css/task-icon.css'
-import { ReactComponent as DoneSVG } from '../assets/svg/done.svg';
-import { ReactComponent as DeleteSVG } from '../assets/svg/delete.svg';
+import './task-icon.css'
+import { ReactComponent as DoneSVG } from '../../assets/svg/done.svg';
+import { ReactComponent as DeleteSVG } from '../../assets/svg/delete.svg';
 import { CgSandClock } from "react-icons/cg";
 import { SiBookstack } from "react-icons/si";
 import { FaSearch, FaReadme, FaMusic } from "react-icons/fa";

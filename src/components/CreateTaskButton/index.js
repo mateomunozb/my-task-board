@@ -1,5 +1,5 @@
-import '../assets/css/create-task-button.css'
-import { TaskIcon } from './TaskIcon';
+import './create-task-button.css'
+import { TaskIcon } from '../TaskIcon';
 
 function CreateTaskButton() {
   return (
